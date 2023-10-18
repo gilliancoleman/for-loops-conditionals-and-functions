@@ -1,0 +1,31 @@
+---
+title: "Week_9_exercises_GIS"
+author: "J.Blondeau"
+date: "2023-10-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Creating a new shapefile
+
+1. Using the locations from Boundary_points.csv as your guide, create a polygon shapefile 2 different ways
+    - Create from scratch using editing tools
+    - Minimum boundary geometry tool
+    
+2. Create a grid of points 50m apart using the polygon from #1 as an extent mask.  
+
+3. Add an ID field to the point shapefile and fill with sequential integers (hint: python helpers).
+
+4. Add the steer bathymetry data to each point.
+
+The final point shapefile you just created will be used for the following interpolations.
+
+5. Create an interpolated bathymetry raster using the IDW method.
+
+6. Create an interpolated bathymetry raster using the Krigging method.
+
+Now repeat 2-6.  Instead, this time create a grid of points 5m apart.  Inspect all the interpolated outputs and compare and contrast.   

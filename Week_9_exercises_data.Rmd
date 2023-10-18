@@ -1,0 +1,58 @@
+---
+title: "Week_9_exercisese_data"
+author: "J.Blondeau"
+date: "2023-10-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+This week you will get some more practice with 'for loops' and then get introduced to creating your own functions.  
+
+
+### For loops
+
+Next set of questions will all use for loops to solve.
+
+1.  Create a for loop that prints each integer from 1 to 25
+
+2.  Create a for loop that prints all the unique species from the 'fish_psu_density' dataset
+
+3.  Create a for loop that prints the square of each integer from 1 to 10
+
+4.  Create a for loop that prints **only** the odd numbers from a sequence of integers from 1 to 20
+
+5.  Create a for loop that prints integer 'is even' or 'is odd' for a sequence of integers from 1 to 10
+
+***
+    "1 is odd"
+    "2 is even"
+    ...
+***
+
+6.  Create a for loop that inserts all the unique species from 'fish_psu_density' into a new vector 
+
+***
+hint:
+```{r, eval=FALSE}
+a <- c()
+for (variable in sequence) {
+  insert variable into vector 'a'
+}
+```
+***
+
+### Creating functions
+
+7.  Create a function that squares any given value
+
+8.  Create a function that calculates the circumference and area of a circle given any radius
+
+9.  Create a function that returns the number of samples per YEAR and STRAT from the 'fish_psu_density' dataframe
+
+10.  Create a function that returns a point and line plot (+- standard error) of mean density over time by REGION for any species.  Use the 'fish_psu_density' dataset.
+      - $standard \  error =  \frac{standard\ deviation}{\sqrt{sample\ size}}$
+      - edit the ggplot parameters for a cleaner look
