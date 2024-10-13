@@ -1,5 +1,5 @@
 data <- read_csv("data/fish_psu_density.csv")
-
+taxo <- read_csv("data/taxonomic.csv")
 
 # 1
 
@@ -74,15 +74,17 @@ sample_number_by_year_strat <- function(df) {
 
 # 10
 
-plot_spp <- function(df, spp, title) {
+plot_spp <- function(df, spp) {
+  
+  commonname <- str_to_title(pluck(filter(taxo, SPECIES_CD == spp)$COMNAME))
   d <- data %>% 
-    filter(SPECIES_CD == "BAL VETU") %>% 
-    group_by(YEAR, REGION) %>% 
+    filter(SPECIES_CD == spp) %>%
+    group_by(YEAR, REGION, SPECIES_CD) %>% 
     summarise(mean_den = mean(density), stdev = sd(density), n = length(unique(PRIMARY_SAMPLE_UNIT)), SE = stdev / sqrt(n)) %>% 
     ggplot(aes(x=YEAR, y=mean_den, color = REGION, group = REGION)) + 
     geom_line(size=1) + geom_point(size=3) + 
     geom_errorbar(aes(ymin = mean_den - SE, ymax = mean_den + SE), width = 0.25, size = 0.5) + 
-    ggtitle(title) + 
+    labs(title = paste("Cool Plot of",commonname, " ")) + 
     xlab("Year") + ylab("Density (SE)") +
     theme_minimal()+
     theme(plot.title = element_text(face = "bold",
