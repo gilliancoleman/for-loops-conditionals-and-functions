@@ -1,7 +1,7 @@
 ---
 title: "Week_9_exercisese_data"
 author: "J.Blondeau"
-date: "2023-10-14"
+date: "2023-10-17"
 output: html_document
 ---
 
@@ -56,3 +56,4 @@ for (variable in sequence) {
 10.  Create a function that returns a point and line plot (+- standard error) of mean density over time by REGION for any species.  Use the 'fish_psu_density' dataset.
       - $standard \  error =  \frac{standard\ deviation}{\sqrt{sample\ size}}$
       - edit the ggplot parameters for a cleaner look
+      - the title of the plot should be dynamic, displaying the common name of the fish chosen
