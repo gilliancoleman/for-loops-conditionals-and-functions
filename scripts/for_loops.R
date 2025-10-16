@@ -54,3 +54,22 @@ species <- c()
 for (s in c("BAL VETU", "CEP FULV", "EPI GUTT", "OCY CHRY", "SPA VIRI")) {species <- append(species, s)}
 
 
+
+#################
+#FUNCTIONS
+#################
+
+#7.) Create a function that squares any given value
+square <- function(x) {
+  return(x**2)}
+square(2)
+
+#8.) Create a function that calculates the circumference and area of a circle given any radius
+
+cir_area <- function(radius) {
+  circum <- 2 * pi * radius
+  area <- pi * radius^2
+  return(list(circumference = circum, area = area))
+}
+
+cir_area(2)
